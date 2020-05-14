@@ -1,0 +1,95 @@
+<html lang="ru">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="ai1.css" type="text/css">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="theme2.css" />
+	<link rel="stylesheet" type="text/css" href="wicart.css" />
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" ></script>
+	<script src="wicart2.js"  type="text/javascript" ></script>
+</head>
+<body>
+<script>
+var priceList = {
+	"999" : {"id" : "999", "subid" : {}, "name" : "Сборка 1", "price" : "52600"},
+	"998" : {"id" : "998", "subid" : {}, "name" : "Сборка 2", "price" : "55000"},
+	};
+</script>	
+
+<div class="cart">
+<div class="price"><a href="#" id="basketwidjet" onclick="cart.showWinow('bcontainer', 1)"></a></div>
+
+<div style="text-align: center"></div>
+</div>
+
+<div class="clearfix">
+<IMG SRC = "sbr.png" ALT = "r3" ALIGN = "left" width="120px" height="120px">
+<details><summary><h4>Сборка ПК 1</h4></summary>
+<a> Процессор: AMD Ryzen 5 3500X<br>Материнская плата: ASUS Prime B450<br> Корпус: Ginzzu B200 <br> Видеокарта: ASRock AMD Radeon RX580<br> ОЗУ: Goodram Iridium 8гбX2<br> SSD M.2: 120гб WD Green<br> Жосткий диск: 1ТБ WD Blue</a></details>
+<div ALIGN = "right" class="div">
+      <button class="button" onclick="cart.addToCart(this, '999', priceList['999'])">Купить</button>
+<h4>52600 руб.</h4>
+</div>
+</div>
+
+<div class="clearfix">
+<IMG SRC = "sbr.png" ALT = "r3" ALIGN = "left" width="120px" height="120px">
+<details><summary><h4>Сборка ПК 2</h4></summary>
+<a> Процессор: AMD Ryzen 5 3500X<br>Материнская плата: ASUS Prime B450<br> Корпус: Ginzzu B200 <br> Видеокарта: ASRock AMD Radeon RX590<br> ОЗУ: Goodram Iridium 8гбX2<br> SSD M.2: 120гб WD Green<br> Жосткий диск: 1ТБ WD Blue</a></details>
+<div ALIGN = "right" class="div">
+      <button class="button" onclick="cart.addToCart(this, '998', priceList['998'])">Купить</button>
+<h4>55000 руб.</h4>
+</div>
+</div>
+
+<!---Форма для магазина-------------------------------->
+<div id="order" class="popup">
+<a href="#" onclick="cart.closeWindow('order', 0)" style="float:right">[закрыть]</a>
+<h4>Введите ваши контактные данные</h4>
+
+<form id="formToSend">
+<input id="fio" type="text" placeholder="Ваши фамилия и имя"  class="" />
+<input id="city" type="text" placeholder="Город"  class="text-input"/>
+<input id="phone" type="text" placeholder="Контактный телефон" class="text-input"/>
+<input id="email" type="text" placeholder="Электронная почта" class="" />
+<br>
+<textarea id="question" placeholder="Адрес"></textarea>
+<br>
+<b>Доставка:</b>
+<br>
+<select id="delivery">
+<option value="-">-</option>
+<option value="Почта РФ">Почта РФ</option>
+<option value="EMS">EMS</option>
+<option value="DHL">DHL</option>
+<option value="TNT">TNT</option>
+</select>
+<br>
+<input type="checkbox" value="V"> Предоплата
+</form>
+<button onclick="cart.sendOrder('formToSend,overflw,bsum');" href="#">Отправить заказ</button>
+</div>
+<!----------------------------------------------------->
+
+
+<script>
+var cart;
+var config;
+var wiNumInputPrefID;
+/* WI-GLOBAL-VARS */
+$(document).ready(function(){  
+    cart = new WICard("cart");
+    config = {'clearAfterSend':true, 'showAfterAdd':false};
+    
+    cart.init("basketwidjet", config);
+    /* WI-MODULES */
+    
+    
+});	
+document.addEventListener('visibilitychange', function(e) {
+cart.init("basketwidjet", config);
+}, false);
+</script>
+
+</body>
+</html>

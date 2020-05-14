@@ -1,0 +1,22 @@
+.button {
+  display: block;
+  background: #ae86b0;
+  color: white;
+  line-height: 28px;
+}
+.input {
+  width: 300px;
+  height: 100px;
+  padding-left: 15px;
+  border: 3px solid #ae86b0;
+}
+.thumb {
+  position: absolute;
+  display: flex;
+  width: 30%;
+  border: 2px solid #F5F5F5;
+  top: 150px;
+}
+.item {
+  margin: 4px;
+}

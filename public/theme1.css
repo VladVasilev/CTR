@@ -1,0 +1,21 @@
+h1
+{
+color: #004080;
+	font: 14px 'Verdana';
+	margin: 0;
+	padding: 0;
+}
+.cart
+{
+
+position: absolute;
+right: 20px;
+	display: block;
+	padding: 0px 5px;
+	color: #ffffff;
+	background-color: #ae86b0;
+	text-decoration: none;
+  font-size: 12px;
+  line-height: 28px;
+  transition: .3s ease-in;
+}

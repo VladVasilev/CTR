@@ -1,0 +1,74 @@
+<html>
+<head><title>123</title>
+<style>
+.sc { 
+scrollbar-face-color:#5997CA; 
+scrollbar-shadow-color: #ffffff;
+scrollbar-highlight-color: #ffffff;
+scrollbar-3dlight-color: #5997CA;
+scrollbar-darkshadow-color: #5997CA; 
+scrollbar-track-color: #F6F6F6;
+scrollbar-arrow-color: #F6F6F6;
+}
+.container {
+  width: 100%;
+}
+
+.item {
+  margin: 4px;
+}
+
+.dead{
+  position:absolute;
+  top: 1%;
+  left: 63%
+}
+.Tape {
+    position: absolute;
+    top:49%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width:700px;
+}
+
+</style>
+     <script> 
+var max = 6;
+ 
+var rand =((Math.random() * max).toFixed(0));
+ 
+function nat (a){
+    return a>0 ? a-(a%1): -(a%1);
+}
+ 
+rand = nat(rand);
+ 
+switch (rand){
+case 1  : rand = 'AMD'; break;
+case 2  : rand = 'intel'; break;
+case 3  : rand = 'Nvidia'; break;
+case 4  : rand = 'AMDG'; break;
+case 5  : rand = 'AMDm'; break;
+case 6  : rand = 'Intelm'; break;    
+}
+ 
+var i = rand;
+var iframeStart = '<iframe src="';
+var iframeAnd = ' "width="690" class="sc" height="280" frameborder="0"></iframe>';
+window.onload = function() {
+     
+         
+        document.getElementById('txt1').innerHTML = iframeStart + i + iframeAnd;
+}
+
+	 </script>
+</head>
+<body>
+<div class="container">
+<div class="item"><IMG SRC = "add.png" ALT = "r" ALIGN = "left" width="490" height="240"></div>
+<div id="txt1" class="Tape"></div>
+<div class="dead"><iframe src="123.html" width="490" height="550" border="1"> </iframe></div>
+</div>
+</body>
+</html>
